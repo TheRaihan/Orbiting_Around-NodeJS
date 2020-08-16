@@ -1,4 +1,4 @@
-const products = [];
+const Product = require("../models/product");
 
 exports.getAddPrdct = (req, res, next) => {
   res.render("add-product", {
@@ -11,19 +11,20 @@ exports.getAddPrdct = (req, res, next) => {
 };
 
 exports.postAddPrdct = (req, res, next) => {
-  products.push({ title: req.body.title });
+  const product = new Product(req.body.title);
+  product.save();
   res.redirect("/");
 };
 
 exports.getPrdct = (req, res, next) => {
-  // console.log('shop.js-> ',adminData.products);
-  // res.sendFile(path.join(__dirname, '../', 'views', 'shop.html'));
-  res.render("shop", {
-    prods: products,
-    pageTitle: "Shop",
-    path: "/",
-    hasProducts: products.length > 0,
-    activeShop: true,
-    productCSS: true,
+  const products = Product.fetchAll((products) => {
+    res.render("shop", {
+      prods: products,
+      pageTitle: "Shop",
+      path: "/",
+      hasProducts: products.length > 0,
+      activeShop: true,
+      productCSS: true,
+    });
   });
 };

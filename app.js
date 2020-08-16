@@ -10,6 +10,7 @@ app.set("views", "views");
 
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/Shop");
+const errRoutes = require("./controller/404");
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -18,9 +19,6 @@ app.use(bdParser.urlencoded({ extended: false }));
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
-  res.status(404).render("404", { pageTitle: "Page not Found", path: "" });
-  //   res.status(404).send("<h1>Page not found</h1>" );
-});
+app.use(errRoutes.errorCntrl);
 
 app.listen(3000);
