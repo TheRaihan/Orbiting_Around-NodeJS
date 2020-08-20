@@ -13,12 +13,17 @@ const getProdFFile = (cb) => {
     else cb(JSON.parse(fileContent));
   });
 };
+
 module.exports = class Product {
-  constructor(t) {
-    this.title = t;
+  constructor(title, imgURL, des, price) {
+    this.title = title;
+    this.imgURL = imgURL;
+    this.des = des;
+    this.price = price;
   }
 
   save() {
+    this.id = Math.random().toString();
     getProdFFile((products) => {
       products.push(this);
       fs.writeFile(p, JSON.stringify(products), (err) => {
