@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,8 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
+  background-color: #282828;
 }
 
 main {
@@ -22,7 +23,7 @@ form {
 .main-header {
   width: 100%;
   height: 3.5rem;
-  background-color: #00695c;
+  background-color: rgb(35, 135, 183);
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -48,13 +49,13 @@ form {
 
 .main-header__item a {
   text-decoration: none;
-  color: white;
+  color: #282828;
 }
 
 .main-header__item a:hover,
 .main-header__item a:active,
 .main-header__item a.active {
-  color: #ffeb3b;
+  color: white;
 }
 
 .mobile-nav {
@@ -64,7 +65,7 @@ form {
   position: fixed;
   left: 0;
   top: 0;
-  background: white;
+  background: #282828;
   z-index: 10;
   padding: 2rem 1rem 1rem 2rem;
   transform: translateX(-100%);
@@ -98,18 +99,18 @@ form {
 .mobile-nav__item a:active,
 .mobile-nav__item a:hover,
 .mobile-nav__item a.active {
-  background: #00695c;
-  color: white;
+  background: rgb(35, 135, 183);
+  color: #282828;
   border-radius: 3px;
 }
 
 #side-menu-toggle {
-  border: 1px solid white;
+  border: 1px solid #282828;
   font: inherit;
   padding: 0.5rem;
   display: block;
   background: transparent;
-  color: white;
+  color: #282828;
   cursor: pointer;
 }
 
@@ -119,8 +120,8 @@ form {
 
 #side-menu-toggle:active,
 #side-menu-toggle:hover {
-  color: #ffeb3b;
-  border-color: #ffeb3b;
+  color: white;
+  border-color: white;
 }
 
 .backdrop {
@@ -139,6 +140,7 @@ form {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
+  color: aliceblue;
 }
 
 .card {
@@ -180,8 +182,8 @@ form {
   padding: 0.25rem 1rem;
   text-decoration: none;
   font: inherit;
-  border: 1px solid #00695c;
-  color: #00695c;
+  border: 1px solid rgb(35, 135, 183);
+  color: rgb(35, 135, 183);
   background: white;
   border-radius: 3px;
   cursor: pointer;
@@ -189,7 +191,7 @@ form {
 
 .btn:hover,
 .btn:active {
-  background-color: #00695c;
+  background-color: rgb(35, 135, 183);
   color: white;
 }
 
