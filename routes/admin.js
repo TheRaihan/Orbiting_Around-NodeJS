@@ -8,6 +8,6 @@ router.get("/add-product", adminCntrl.getAddPrdct);
 // admin/add-product -- POST
 router.post("/add-product", adminCntrl.postAddPrdct);
 
-router.get("/products", adminCntrl.getProducts);
+// router.get("/products", adminCntrl.getProducts);
 
 module.exports = router;

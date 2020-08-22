@@ -15,11 +15,11 @@ exports.postAddPrdct = (req, res, next) => {
   const imgURL = req.body.imgURL;
   const price = req.body.price;
   const des = req.body.des;
-  const product = new Product(title, imgURL, des, price);
+  const product = new Product(title, price, des, imgURL);
   product.save();
   res.redirect("/");
 };
-
+/*
 exports.getProducts = (req, res, next) => {
   Product.fetchAll((products) => {
     res.render("admin/products", {
@@ -29,3 +29,5 @@ exports.getProducts = (req, res, next) => {
     });
   });
 };
+
+*/
