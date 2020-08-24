@@ -24,7 +24,7 @@ class Product {
       .find()
       .toArray()
       .then((products) => {
-        console.log(products);
+        console.log();
         return products;
       })
       .catch((err) => console.log(err));
