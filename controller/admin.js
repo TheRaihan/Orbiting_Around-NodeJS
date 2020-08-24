@@ -4,9 +4,6 @@ exports.getAddPrdct = (req, res, next) => {
   res.render("admin/add-product", {
     pageTitle: "Add Product",
     path: "/admin/add-product",
-    formsCSS: true,
-    productCSS: true,
-    activeAddProduct: true,
   });
 };
 
@@ -16,7 +13,14 @@ exports.postAddPrdct = (req, res, next) => {
   const price = req.body.price;
   const des = req.body.des;
   const product = new Product(title, price, des, imgURL);
-  product.save();
+  product
+    .save()
+    .then((result) => {
+      console.log("Created Product");
+      res.redirect("/admin/products");
+    })
+    .catch((err) => console.log(err));
+
   res.redirect("/");
 };
 /*

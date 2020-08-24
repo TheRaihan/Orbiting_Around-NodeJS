@@ -19,11 +19,9 @@ const mongoConnect = (callback) => {
 };
 
 const getDb = () => {
-  if (_db) {
-    return _db;
-  } 
-//   else throw "No DB Found!";
+  if (_db) return _db;
+  throw "No DB Found!";
 };
 
-module.exports = mongoConnect;
-module.exports = getDb;
+exports.mongoConnect = mongoConnect;
+exports.getDb = getDb;

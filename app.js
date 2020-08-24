@@ -3,7 +3,7 @@ const path = require("path");
 const express = require("express");
 const bdParser = require("body-parser");
 
-const mongoConnect = require("./util/database");
+const mongoConnect = require("./util/database").mongoConnect;
 
 const app = express();
 
@@ -26,6 +26,4 @@ app.use(shopRoutes);
 
 app.use(errRoutes.errorCntrl);
 
-mongoConnect();
-
-app.listen(3000);
+mongoConnect(() => app.listen(3000));

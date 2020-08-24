@@ -6,12 +6,12 @@ router.get("/", shpCtrl.getIndex);
 
 router.get("/products", shpCtrl.getPrdct);
 
-router.get("/products/:productID", shpCtrl.getPrdctDetails);
+// router.get("/products/:productID", shpCtrl.getPrdctDetails);
 
-router.get("/cart", shpCtrl.getCart);
+// router.get("/cart", shpCtrl.getCart);
 
-router.get("/orders", shpCtrl.getOrders);
+// router.get("/orders", shpCtrl.getOrders);
 
-router.get("/checkout", shpCtrl.getCheckout);
+// router.get("/checkout", shpCtrl.getCheckout);
 
 module.exports = router;
