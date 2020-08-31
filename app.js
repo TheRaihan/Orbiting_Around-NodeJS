@@ -21,6 +21,7 @@ app.use(bdParser.urlencoded({ extended: false }));
 app.use((req, res, next) => {
   next();
 });
+
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 
